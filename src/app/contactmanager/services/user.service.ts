@@ -38,19 +38,19 @@ export class UserService {
     loadAll() {
       const url = 'https://angular-material-api.azurewebsites.net/users';
       //api call
-      return this.http.get<User[]>(url)
-              .pipe(tap(data => {
-                this.dataStore.users = data;
-                // next method detect changes
-                this._users.next(Object.assign({}, this.dataStore).users)
-             }),
-             catchError(err => {
-              console.error('Error occured while retrieving data');
-              throw err;
-            })).subscribe();
+      // return this.http.get<User[]>(url)
+      //         .pipe(tap(data => {
+      //           this.dataStore.users = data;
+      //           // next method detect changes
+      //           this._users.next(Object.assign({}, this.dataStore).users)
+      //        }),
+      //        catchError(err => {
+      //         console.error('Error occured while retrieving data');
+      //         throw err;
+      //       })).subscribe();
 
-      // this.dataStore.users = USERS;
-      // this._users.next(Object.assign({}, this.dataStore).users);
+      this.dataStore.users = USERS;
+      this._users.next(Object.assign({}, this.dataStore).users);
     }
 }
 
