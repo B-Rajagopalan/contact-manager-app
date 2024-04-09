@@ -10,17 +10,18 @@ import { Router } from '@angular/router';
   styleUrl: './toolbar.component.scss'
 })
 export class ToolbarComponent {
-  @Input() isDarkTheme: boolean = false;
-  @Output() toggleSidenav = new EventEmitter();
-  @Output() toggleTheme = new EventEmitter();
-  @Output() toggleDir = new EventEmitter();
+    @Input() isDarkTheme: boolean = false;
+    @Output() toggleSidenav = new EventEmitter();
+    @Output() toggleTheme = new EventEmitter();
+    @Output() toggleDir = new EventEmitter();
 
-  constructor(private dialog: MatDialog, private snackBar: MatSnackBar,
+    constructor(private dialog: MatDialog, private snackBar: MatSnackBar,
                 private router: Router) {}
 
-  openDialog() {
-    let dialogRef = this.dialog.open(NewContactDialogComponent, {
-      width: '450px'
+    openDialog() {
+      let dialogRef = this.dialog.open(NewContactDialogComponent, {
+        width: '450px',
+        panelClass: this.isDarkTheme?'dark-theme' : ''
     })
 
     dialogRef.afterClosed().subscribe(user => {
