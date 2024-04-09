@@ -1,0 +1,19 @@
+<mat-toolbar color="primary"> <!-- The theme that we chose-->
+   
+    <button class="sidenav-toggle" mat-button (click)="toggleSidenav.emit()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span>Contact Manager</span>
+    <span class="example-spacer"></span>
+    <span>Switch to {{isDarkTheme?'Light':'Dark'}}</span> &nbsp;&nbsp;&nbsp;
+    <mat-slide-toggle (click)="toggleTheme.emit()"></mat-slide-toggle>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+    <button (click)="openDialog()" mat-menu-item>Add Contact</button>
+    <button (click)="toggleDir.emit()" mat-menu-item>Toggle Direction</button>
+    </mat-menu>
+
+</mat-toolbar>

@@ -1,0 +1,28 @@
+.app-sidenav-container {
+    flex: 1;
+    width: 100%;
+    min-width: 100%; //optional
+    height: 100%;
+    min-height: 100%; //optional
+}
+
+.app-sidenav-content {
+    display: flex;
+    height: 100%;
+    //align-items: center; //vertical alignment
+    //justify-content: center; //horizontal alignment
+
+    flex-direction: column; // to show the elements from top to bottom (column wise)
+}
+
+.app-sidenav {
+    width: 240px;
+}
+
+.wrapper {
+    margin: 50px;
+}
+
+mat-sidenav {
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.75); /* mat-elevation not working */
+}

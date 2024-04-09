@@ -1,0 +1,28 @@
+.flex-container {
+    display: flex;
+    //flex-flow: row wrap;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+// If width is below 800px, this is activated
+@media all and (max-width: 800px) {
+    .flex-container {
+        justify-content: flex-start;
+    }
+}
+
+.flex-item {
+    width: 200px;
+    height: 150px;
+
+    background: tomato;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+    line-height: 150px;
+
+}
